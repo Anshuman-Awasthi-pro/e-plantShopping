@@ -1,81 +1,95 @@
-/* App.css – SAFE GLOBAL STYLES ONLY */
-
-* {
+/* RESET */
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html,
-  body {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-  }
-  
-  body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
   }
-/* Landing Page styles */
-
-.landing-page {
+  
+  /* LANDING PAGE */
+  .landing-page {
     position: relative;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
   }
   
+  /* BACKGROUND IMAGE */
   .background-image {
     position: absolute;
     inset: 0;
+    background-image: url("https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg");
     background-size: cover;
     background-position: center;
-    filter: brightness(0.75);
+    filter: brightness(0.6);
+    z-index: -1;
   }
   
+  /* OVERLAY CONTENT */
   .content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.35);
+    height: 100%;
+    padding: 80px;
+    color: white;
+    background: rgba(0, 0, 0, 0.45);
   }
   
+  /* LEFT SIDE */
   .landing_content {
-    text-align: center;
-    color: white;
+    max-width: 500px;
   }
   
   .landing_content h1 {
-    font-size: 42px;
+    font-size: 48px;
+    margin-bottom: 10px;
   }
   
-  .landing_content p {
+  .tagline {
     font-size: 20px;
+    margin-bottom: 30px;
   }
   
-  .divider {
-    width: 60px;
-    height: 3px;
-    background-color: #4caf50;
-    margin: 15px auto;
-  }
-  
-  .get-started-button {
-    margin-top: 30px;
-    padding: 14px 30px;
+  /* RIGHT SIDE TEXT */
+  .about-text {
+    max-width: 500px;
     font-size: 18px;
-    border: none;
-    border-radius: 6px;
+    line-height: 1.6;
+    color: #f1f1f1;
+  }
+  
+  /* BUTTON */
+  .get-started-button {
+    padding: 14px 28px;
+    font-size: 18px;
     background-color: #4caf50;
     color: white;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
   }
   
   .get-started-button:hover {
     background-color: #43a047;
   }
-    
+  
+  /* DIVIDER */
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: #4caf50;
+    margin: 15px 0;
+  }
+  
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px;
+    }
+  
+    .about-text {
+      margin-top: 30px;
+    }
+  }
+  
